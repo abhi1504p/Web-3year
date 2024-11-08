@@ -3,29 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Currency Converter App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="login-page">
+        <h2>Login</h2>
+        <form id="login-form">
+           <label >Login:</label> <input type="text" id="username" placeholder="Username" required><br><br>
+           <label >Password:</label> <input type="password" id="password" placeholder="Password" required><br><br>
+            <button type="button" onclick="validateLogin()">Login</button>
+            <button type="button" onclick="validateLogin()">Reset</button>
+            
+            <p id="login-error" style="color: red; display: none;">Invalid login credentials!</p>
+           
+        </form>
+    </div>
 
-    <!-- <button class="btn">Click here</button>
-    <p class="para">Insert here</p> -->
-    <script>
-        let button = document.createElement("button");
-        button.textContent = "Click Me";
-        button.id = "btn"
-        document.body.appendChild(button);
+    <div id="converter-page" style="display: none;">
+        <h2>Currency Converter</h2>
+        <div class="converter-box">
+            <label>Amount:</label>
+            <input type="number" id="amount" value="1" required>
+            <select id="fromCurrency">
+                <option value="USD">USD - American Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+               
+            </select>
+            <br><br>
+            <label>Convert to:</label>
+            <select id="toCurrency">
+                <option value="TRY">TRY - Turkish Lira</option>
+                <option value="INR">INR - Indian Rupee</option>
+                
+            </select>
+            <br><br>
+            <button onclick="convertCurrency()">Convert</button>
+            <p id="conversion-result"></p>
+        </div>
+    </div>
 
-        let para = document.createElement("p");
-        para.textContent = "----Insert Here-------";
-        para.id="para";
-        document.body.appendChild(para);
-        document.getElementsByClassName("btn")[0].onclick=function(){
-            document.getElementsByClassName("para")[0].innerHTML="<b>ABESEC</b>"
-        }
-        document.getElementsByClassName("btn")[0].addEventListener("click",function
-        (){
-            document.getElementsByClassName("para")[0].innerHTML="<br>Another click"
-        })
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
